@@ -74,7 +74,32 @@ Mypings 이름 및 카테고리 수정과 해당 Mypings에서 제외할 게시�
 ## 팀원
 
 ### 박미주
-‌
+
+### 기획 단계
+- 기능 명세 작성 참여
+- DB 설계 참여
+- front, back 폴더 구조 설계
+- 공통 컴포넌트 ui 작성
+- 유저, 게시물, 마이핑스 등 대부분의 인터페이스 작성
+
+### 구현(인터페이스)
+- react와 typescript 사용
+- 상태 관리: contextAPI와 SWR
+- 회원: social login, 프로필 수정 
+- 홈: infinite scrolling을 통해 게시물 load, 지도 viewport에 맞게 main app 크기 조절, 메뉴 및 설정 modal
+- 게시물: 생성, 수정, 삭제, 이미지 modal
+- 댓글: 조회, 생성, 수정, 삭제
+- 좋아요: 생성, 삭제 toggle
+- 마이핑스: 생성, 수정, 삭제 toggle
+- 쉐어핑스: 생성, 수정, 삭제 toggle
+
+
+### hooks/utils(custom)
+- `useInput`: ref 및 value의 변동 값을 바로 가져올 수 있도록
+- `promisifyImageFiles`: 이미지 formData 병렬 처리
+- `sessionContext`: useSWR과 context api를 연결하여 전역으로 상태 관리
+- `fetcher`: axios을 통해 보다 편리한 custom fetch 함수 구현
+- `compose`: 함수 배열을 reduce하여 순차적으로 실행해야 하는 함수 연결하여 유저 권한별 화면 분리
 
 ### 최태윤
 
