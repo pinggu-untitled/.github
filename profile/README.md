@@ -83,15 +83,22 @@ Mypings 이름 및 카테고리 수정과 해당 Mypings에서 제외할 게시�
 - 유저, 게시물, 마이핑스 등 대부분의 인터페이스 작성
 
 ### 구현(인터페이스)
-- react와 typescript 사용
-- 상태 관리: contextAPI와 SWR
-- 회원: social login, 프로필 수정 
+- 모든 ui 기획 및 개발
+- `react.js`와 `typescript` 사용
+- `emotion`으로 스타일링
+- `context api`와 `SWR`로 상태 관리
+- *`context api`: 전역 상태 관리 (회원정보 등)
+- *SWR: revalidating 기능으로 데이터 최신 업데이트 기능 수행
+
+### 각 페이지별 구현 사항
+- 회원: 로그인, 회원가입, **social login**, 프로필 생성/수정 
 - 홈: infinite scrolling을 통해 게시물 load, 지도 viewport에 맞게 main app 크기 조절, 메뉴 및 설정 modal
 - 게시물: 생성, 수정, 삭제, 이미지 modal
 - 댓글: 조회, 생성, 수정, 삭제
-- 좋아요: 생성, 삭제 toggle
-- 마이핑스: 생성, 수정, 삭제 toggle
-- 쉐어핑스: 생성, 수정, 삭제 toggle
+- 좋아요: 생성, 삭제 toggle fetcher
+- 마이핑스: 생성, 수정, 삭제 toggle fetcher
+- 쉐어핑스: 생성, 수정, 삭제 toggle fetcher
+- 검색: `debounce`로 검색 요청 최적화, filter 기능 추가
 
 
 ### hooks/utils(custom)
@@ -100,6 +107,7 @@ Mypings 이름 및 카테고리 수정과 해당 Mypings에서 제외할 게시�
 - `sessionContext`: useSWR과 context api를 연결하여 전역으로 상태 관리
 - `fetcher`: axios을 통해 보다 편리한 custom fetch 함수 구현
 - `compose`: 함수 배열을 reduce하여 순차적으로 실행해야 하는 함수 연결하여 유저 권한별 화면 분리
+
 
 ### 최태윤
 
